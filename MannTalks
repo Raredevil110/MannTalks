@@ -1,1 +1,255 @@
+# Updating the website code to match the MannTalks logo colors and place the logo appropriately
 
+
+
+updated_website_code = """
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MannTalks Dashboard</title>
+
+    <style>
+
+        body {
+
+            margin: 0;
+
+            font-family: Arial, sans-serif;
+
+            background: linear-gradient(to right, #2E1A47, #16122E);
+
+            color: white;
+
+            display: flex;
+
+        }
+
+        
+
+        /* Sidebar */
+
+        .sidebar {
+
+            width: 80px;
+
+            height: 100vh;
+
+            background: rgba(255, 255, 255, 0.1);
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            padding-top: 20px;
+
+        }
+
+
+
+        .sidebar img {
+
+            width: 50px;
+
+            height: 50px;
+
+            margin: 15px 0;
+
+            cursor: pointer;
+
+        }
+
+
+
+        /* Main content */
+
+        .main-content {
+
+            flex-grow: 1;
+
+            padding: 20px;
+
+            display: flex;
+
+            flex-direction: column;
+
+            align-items: center;
+
+            justify-content: center;
+
+            text-align: center;
+
+            position: relative;
+
+        }
+
+
+
+        .logo {
+
+            position: absolute;
+
+            top: 20px;
+
+            left: 20px;
+
+            width: 120px;
+
+        }
+
+
+
+        .greeting {
+
+            font-size: 28px;
+
+            font-weight: bold;
+
+            margin-bottom: 20px;
+
+            color: #F6A9D0;
+
+        }
+
+
+
+        .button-container {
+
+            display: flex;
+
+            gap: 15px;
+
+        }
+
+
+
+        .btn {
+
+            padding: 12px 20px;
+
+            border: none;
+
+            cursor: pointer;
+
+            font-size: 16px;
+
+            border-radius: 5px;
+
+            transition: 0.3s ease;
+
+            background: #E066B0;
+
+            color: white;
+
+        }
+
+
+
+        .btn:hover {
+
+            background: #C0579A;
+
+        }
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- Sidebar with icons -->
+
+    <div class="sidebar">
+
+        <img src="home_icon.png" alt="Home" title="Home">
+
+        <img src="article_icon.png" alt="Articles" title="Articles">
+
+        <img src="speech_icon.png" alt="Speeches" title="Speeches">
+
+        <img src="collab_icon.png" alt="Collaborations" title="Collaborations">
+
+        <img src="support_icon.png" alt="Support" title="Support">
+
+    </div>
+
+
+
+    <!-- Main Content -->
+
+    <div class="main-content">
+
+        <img src="manntalks_logo.png" alt="MannTalks Logo" class="logo">
+
+        <div class="greeting" id="userGreeting">Hi, User</div>
+
+        <div class="button-container">
+
+            <button class="btn" onclick="goToPage('articles')">Articles</button>
+
+            <button class="btn" onclick="goToPage('speeches')">Speeches</button>
+
+            <button class="btn" onclick="goToPage('collaborations')">Collaborations</button>
+
+            <button class="btn" onclick="goToPage('support')">Support</button>
+
+        </div>
+
+    </div>
+
+
+
+    <script>
+
+        // Simulating user login with prompt
+
+        let userName = prompt("Enter your name:");
+
+        if (userName) {
+
+            document.getElementById("userGreeting").innerText = "Hi, " + userName;
+
+        }
+
+
+
+        // Function to navigate to different sections
+
+        function goToPage(section) {
+
+            alert("Navigating to " + section);
+
+            // Here you can link to actual pages when built
+
+        }
+
+    </script>
+
+</body>
+
+</html>
+
+"""
+
+
+
+# Saving the updated website code as an HTML file for the user to download
+
+updated_file_path = "/mnt/data/MannTalks_Dashboard_Updated.html"
+
+with open(updated_file_path, "w") as file:
+
+    file.write(updated_website_code)
+
+
+
+updated_file_path
